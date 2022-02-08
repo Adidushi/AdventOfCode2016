@@ -1,11 +1,18 @@
+from collections import Counter
+
+
 def q1():
     with open('day 06\input.txt', 'r') as f:
         input = f.read().splitlines()
+    cols = zip(*input)
+    return ''.join([Counter(col).most_common(1)[0][0] for col in cols])
 
 
 def q2():
     with open('day 06\input.txt', 'r') as f:
         input = f.read().splitlines()
+    cols = zip(*input)
+    return ''.join([Counter(col).most_common()[-1][0] for col in cols])
 
 
 if __name__ == '__main__':
